@@ -19,25 +19,19 @@ func TestSum(t *testing.T) {
 
 func TestSumAll(t *testing.T) {
 	t.Run("sum all slices", func(t *testing.T) {
-		slices := [][]int{{1, 2, 3}, {0, 9}}
-
-		got := SumAll(slices)
+		got := SumAll([]int{1, 2, 3}, []int{0, 9})
 		want := []int{6, 9}
 		assertSlicesEqual(t, got, want)
 	})
 
 	t.Run("safety sum empty slices", func(t *testing.T) {
-		slices := [][]int{{}, {0, 9, 1}}
-
-		got := SumAll(slices)
+		got := SumAll([]int{}, []int{0, 9, 1})
 		want := []int{0, 10}
 		assertSlicesEqual(t, got, want)
 	})
 
 	t.Run("safety sum many empty slices", func(t *testing.T) {
-		slices := [][]int{{}, {}, {}}
-
-		got := SumAll(slices)
+		got := SumAll([]int{}, []int{}, []int{})
 		want := []int{0, 0, 0}
 		assertSlicesEqual(t, got, want)
 	})

@@ -1,6 +1,6 @@
 package main
 
-func SumAll(slices [][]int) []int {
+func SumAll(slices ...[]int) []int {
 	result := []int{}
 
 	for _, slice := range slices {
