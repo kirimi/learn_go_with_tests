@@ -1,7 +1,7 @@
 package main
 
 func SumAll(slices ...[]int) []int {
-	result := []int{}
+	result := make([]int, 0, len(slices))
 
 	for _, slice := range slices {
 		sum := Sum(slice)
